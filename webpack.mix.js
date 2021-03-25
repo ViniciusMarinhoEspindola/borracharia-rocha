@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
+const minifier = require("minifier");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,7 +12,20 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.js("resources/assets/js/app.js", "public/js")
+    .js("resources/assets/js/admin/app.js", "public/js/admin")
+    .sass("resources/assets/sass/app.scss", "public/css")
+    .sass("resources/assets/sass/admin/app.scss", "public/css/admin")
+    .options({
+        postCss: [
+            require("autoprefixer")({
+                grid: true,
+            }),
+        ],
+        processCssUrls: false,
+    });
+
+mix.then(() => {
+    minifier.minify("public/css/app.css");
+    minifier.minify("public/css/admin/app.css");
+});
