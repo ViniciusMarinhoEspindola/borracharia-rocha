@@ -13,23 +13,32 @@ body {
 }
 
 .login-form {
+    justify-content: center;
+
+    hr {
+        width: 70%;
+        border-top: 1px solid gray;
+    }
+
+    .title {
+        font-weight: normal;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
     .card {
         padding: 50px;
-        .title {
-            font-weight: normal;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
+        // min-width: 600px;
 
         form {
+            .form-label {
+                font-weight: 600;
+            }
+
             input {
-                border: none;
-                border-bottom: 1px solid #ccc;
-                border-radius: 0px;
 
                 &:focus {
                     background-color: transparent;
                     box-shadow: none;
-                    border-bottom: 1px solid #ed5037;
+                    border: 1px solid #ed5037;
 
                     ::-webkit-input-placeholder {
                         color: #ed5037;
