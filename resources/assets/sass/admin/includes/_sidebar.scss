@@ -1,0 +1,56 @@
+.sidebar {
+    padding-top: 70px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $light;
+    width: 270px;
+    z-index: 998;
+    overflow: auto;
+
+    &::-webkit-scrollbar
+    {
+        width: 3px;
+        background-color: transparent;
+    }
+
+
+    .title {
+        color: rgb(43, 42, 42);
+        font-size: x-large;
+        margin-top: 40px;
+        margin-bottom: 60px;
+    }
+
+
+    ul {
+        list-style: none;
+        padding: 0px;
+
+        a {
+            text-decoration: none;
+
+            li {
+                padding: 20px 20px;
+                color: rgb(43, 42, 42);
+                margin: 0px;
+                background-color: $light;
+
+                i {
+                    margin-right: 10px;
+                }
+
+                &.active {
+                    // border-left: 3px solid $red;
+                    border-right: 3px solid $red;
+                    color: $red;
+                }
+                &:hover {
+                    background-color: $red;
+                    color: $light;
+                }
+            }
+        }
+    }
+}
