@@ -13,6 +13,16 @@
             <div class="row">
                 <div class="col-md-12 px-4">
                     <div class="card-body">
+                        @if(session()->has('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{session('success')}}
+                            </div>
+                        @endif
+                        @if(session()->has('error'))
+                            <div class="alert alert-danger" role="alert">
+                                {{session('error')}}
+                            </div>
+                        @endif
 
                         <form method="POST" action="{{ route('auth.forgot-password') }}">
                             @csrf

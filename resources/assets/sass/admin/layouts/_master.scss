@@ -42,7 +42,11 @@
     }
 }
 
-
+.borders {
+    border: none;
+    border-left: 2px solid $red;
+    border-right: 2px solid $red;
+}
 
 .text-danger {
     color: $red !important;

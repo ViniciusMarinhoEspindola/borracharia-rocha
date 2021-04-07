@@ -1,0 +1,99 @@
+#paginator{
+    margin-bottom: 1.5rem;
+
+    .nav-pagination{
+        display: flex;
+        justify-content: center;
+    }
+
+    .pagination{
+        border: 1px solid darken(#f2f3f4, 5%);
+        padding: .5em 2em;
+
+        .page-item{
+            &.active, &:hover{
+                .page-link{
+                    background: $red;
+                    color: #fff;
+                    border-color: $red;
+                }
+
+                &.active{
+                    .page-link{
+                        font-weight: 700;
+                        border-width: 2px;
+                    }
+                }
+            }
+
+            &.disabled{
+                display: none;
+            }
+
+            &:not(:last-child){
+                margin-right: 10px;
+            }
+        }
+        .page-link{
+            border: 1px solid transparent;
+            border-radius: 2px;
+            color: #333;
+            padding: .35rem .60rem;
+            font-size: 14px;
+
+            &.prev, &.next{
+                &:before, &:after{
+                    color: #333;
+                }
+                &:hover{
+                    &:before, &:after{
+                        color: #fff;
+                    }
+                }
+            }
+
+            &.prev:before{
+                margin-right: 10px;
+                color: gray;
+
+                &:hover{
+                    color: $red;
+                }
+
+            }
+            &.next:after{
+                margin-left: 10px;
+                color: gray;
+            }
+        }
+
+        .ls-disabled{
+            margin-right: 10px;
+        }
+
+        @media(max-width: 568px){
+            padding: 0;
+            .page-item:not(:last-child) {
+                margin-right: 4px;
+            }
+            .page-link{
+                font-size: 12px;
+            }
+        }
+    }
+
+    @media(max-width: 992px) {
+        .nav-pagination{
+            flex-wrap: wrap;
+
+            .pagination{
+                flex-wrap: wrap;
+
+                .page-item{
+                    margin-right: .5rem;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}
