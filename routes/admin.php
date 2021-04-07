@@ -33,7 +33,7 @@ Route::group(['prefix' => 'auth', 'namespace' => 'Auth', 'as' => 'auth.'], funct
 // Admin
 Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
 
-    Route::redirect('/', '/admin/users', 301);
+    Route::redirect('/', '/admin/users', 301)->name('index');
 
     // Users
     Route::resource('/users', UserController::class);

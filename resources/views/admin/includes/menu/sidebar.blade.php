@@ -1,4 +1,4 @@
-<nav class="sidebar">
+<nav class="sidebar" id="sidebar">
 
     <h1 class="title text-center">Borracharia Rocha</h1>
 
@@ -6,7 +6,7 @@
         <a href="">
             <li><span class="sidebar-icon"><i class="fas fa-house-user"></i></span> Home</li>
         </a>
-        <a href="">
+        <a href="{{ route('admin.users.index') }}">
             <li class="active"><span class="sidebar-icon"><i class="fas fa-users"></i></span> Usuários</li>
         </a>
         <a href="">

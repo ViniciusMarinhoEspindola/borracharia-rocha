@@ -19,9 +19,29 @@
 
 .page-content {
     margin-top: 70px;
-    margin-left: 280px;
+    margin-left: 90px;
     margin-right: 10px;
+    transition: all .1s ease-in-out;
+
+    @media only screen and (max-width: 600px) {
+        width: 100%;
+        margin-left: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        // margin-right: 10px;
+    }
+
+    &.active {
+        margin-top: 70px;
+        margin-left: 280px;
+        margin-right: 10px;
+    }
+
+    .per-page {
+        max-width: 60px;
+    }
 }
+
 
 
 .text-danger {

@@ -5,7 +5,9 @@
 
 <body>
 
-@yield('content')
+<section class="page-content" id="page-content">
+    @yield('content')
+</section>
 
 @include('admin.includes.scripts')
 

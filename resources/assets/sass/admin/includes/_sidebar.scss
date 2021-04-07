@@ -5,9 +5,15 @@
     top: 0;
     left: 0;
     background-color: $light;
-    width: 270px;
+    width: 80px;
     z-index: 998;
     overflow: auto;
+    transition: all .1s ease-in-out;
+
+
+    @media only screen and (max-width: 600px) {
+        width: 0%;
+    }
 
     &::-webkit-scrollbar
     {
@@ -21,6 +27,7 @@
         font-size: x-large;
         margin-top: 40px;
         margin-bottom: 60px;
+        display: none;
     }
 
 
@@ -36,6 +43,9 @@
                 color: rgb(43, 42, 42);
                 margin: 0px;
                 background-color: $light;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
 
                 i {
                     margin-right: 10px;
@@ -51,6 +61,24 @@
                     color: $light;
                 }
             }
+        }
+    }
+
+
+    &.active {
+        width: 270px;
+
+        .title {
+            display: block;
+        }
+
+        ul a li {
+            text-align: left !important;
+            display: block;
+        }
+
+        @media only screen and (max-width: 600px) {
+            width: 100vw;
         }
     }
 }
