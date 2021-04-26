@@ -1,0 +1,100 @@
+/*
+	A couple styles to make the demo page look good
+ */
+.row {
+	margin-bottom: 1rem;
+}
+[class*="col-"] {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+hr {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+#files {
+    overflow-y: scroll !important;
+    min-height: 320px;
+}
+@media (min-width: 768px) {
+	#files {
+		min-height: 0;
+	}
+}
+#debug {
+	overflow-y: scroll !important;
+	height: 180px;
+}
+
+.dm-uploader {
+	border: 0.25rem dashed #A5A5C7;
+	text-align: center;
+}
+.dm-uploader.active {
+	border-color: red;
+
+	border-style: solid;
+}
+
+#sortable {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+
+#sortable li {
+    margin: 3px 3px 3px 0;
+    padding: 1px;
+    float: left;
+    border: 0;
+    background: none;
+}
+
+#sortable ul {
+    margin: 0 auto;
+}
+
+#sortable li img {
+    width: 180px;
+    height: 140px;
+    background: #ddd;
+    border: solid rgb(115, 122, 228) 1px;
+    float: left;
+    position: relative;
+}
+
+[class*='close-'] {
+    color: #777;
+    font: 14px/100% arial, sans-serif;
+    position: relative;
+    right: 16px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    top: 0px;
+    text-decoration: none;
+}
+
+.close-thik:after {
+    content: '✖';
+    text-decoration: none;
+}
+
+.imgcontainer {
+    position: relative;
+}
+
+div.dt-buttons {
+    position: relative;
+    float: left;
+}
+
+.dataTables_wrapper .dataTables_length {
+    float: left;
+}
+
+.space {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+

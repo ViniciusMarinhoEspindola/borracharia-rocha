@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="card my-4 p-4">
+<div class="card borders my-4 p-4">
     <h2 class="text-danger title text-center"><i class="fas fa-house-user"></i> Usuários</h2>
 </div>
 
@@ -59,7 +59,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3" class="text-center">Nenhum usuário encontrado!</td>
+                        <td colspan="7" class="text-center">Nenhum usuário encontrado!</td>
                     </tr>
                 @endforelse
             </tbody>

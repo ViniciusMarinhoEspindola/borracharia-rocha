@@ -30,7 +30,7 @@ class UserController extends Controller
 
         $filters = $request->all();
 
-        return view('admin.users.index', compact('users', 'filters'));
+        return view('admin.pages.users.index', compact('users', 'filters'));
     }
 
     /**
@@ -40,7 +40,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.pages.users.create');
     }
 
     /**
@@ -83,7 +83,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.users.edit', compact('user'));
+        return view('admin.pages.users.edit', compact('user'));
     }
 
     /**

@@ -35,6 +35,15 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
 
     Route::redirect('/', '/admin/users', 301)->name('index');
 
+
+    // Imagem Pneus
+    Route::put('/images-pneus/reorder', 'ImagemPneuController@reorder')->name('imagem-pneus.reorder');
+    Route::post('/images-pneus/store/{pneu}', 'ImagemPneuController@store')->name('imagem-pneus.store');
+    Route::delete('/images-pneus/delete-images/{id}', 'ImagemPneuController@destroy')->name('imagem-pneus.destroy');
+
+    // Pneus
+    Route::resource('/pneus', PneuController::class);
+
     // Users
     Route::resource('/users', UserController::class);
 });
