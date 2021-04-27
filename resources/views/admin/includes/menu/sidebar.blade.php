@@ -1,4 +1,4 @@
-<nav class="sidebar" id="sidebar">
+<nav class="sidebar active" id="sidebar">
 
     <h1 class="title text-center">Borracharia Rocha</h1>
 
@@ -11,7 +11,7 @@
             <li @if(Request::segment(2) == 'pneus') class="active" @endif><span class="sidebar-icon"><i class="fas fa-boxes"></i></span> Pneus</li>
         </a>
 
-        <a href="">
+        <a href="{{ route('admin.contatos.index') }}">
             <li><span class="sidebar-icon"><i class="fas fa-envelope-open-text"></i></span> Contatos</li>
         </a>
 

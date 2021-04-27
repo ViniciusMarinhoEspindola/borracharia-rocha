@@ -44,6 +44,9 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
     // Pneus
     Route::resource('/pneus', PneuController::class);
 
+    // Contatos
+    Route::get('/contatos', 'ContatoController@index')->name('contatos.index');
+
     // Users
     Route::resource('/users', UserController::class);
 });

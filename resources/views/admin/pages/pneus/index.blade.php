@@ -20,12 +20,6 @@
 
 <div class="card my-4 p-4">
     <div class="row justify-content-between mb-5">
-        {{-- <form action="" class="col ">
-            <select name="" class="form form-select per-page" id="">
-                <option value="">5</option>
-            </select>
-        </form> --}}
-
         <div class="d-flex justify-content-end col">
             <a class="btn btn-danger" href="{{ route("admin.pneus.create") }}"><i class="fas fa-plus"></i> Cadastrar</a>
         </div>

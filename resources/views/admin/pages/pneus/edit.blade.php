@@ -46,11 +46,11 @@
 
     <ul class="d-flex upload-list" style="overflow-x: auto !important;" id="gallery">
         @foreach ($imagens as $imagem)
-            <div class="card col-2 mb-1" id="{{ $imagem->id }}" style="height: 250px;">
-                <form class="position-absolute" action="{{ route('admin.imagem-pneus.destroy', $imagem->id) }}" method="POST" style="z-index:999">
+            <div class="card col-lg-2 col-md-3 col-sm-12 mb-1" id="{{ $imagem->id }}" style="max-height: 250px; min-height:100px; min-width:100px;">
+                <form class="position-absolute" action="{{ route('admin.imagem-pneus.destroy', $imagem->id) }}" method="POST" style="z-index:19">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-sm btn-danger rounded-circle p-2 m-2 delete-img"><small><i class="fas fa-trash"></i></small></button>
+                    <button type="submit" class="btn btn-sm btn-danger rounded-circle p-2 delete-img"><small><i class="fas fa-trash"></i></small></button>
                 </form>
 
                 <li class="list-group center" href="{{ asset('storage/pneus/' . $imagem->img) }}" role="button" style="cursor: pointer;position: relative;top: 50%;transform: translateY(-50%);">

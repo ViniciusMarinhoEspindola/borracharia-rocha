@@ -74,6 +74,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.align-left {
+  text-align: left !important;
+}
+
 .topbar {
   width: 100%;
   height: 60px;

@@ -5,7 +5,7 @@
 
 <body>
 
-<section class="page-content" id="page-content">
+<section class="page-content active" id="page-content">
     @yield('content')
 </section>
 
