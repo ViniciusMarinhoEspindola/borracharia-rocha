@@ -25,7 +25,7 @@ class LoginController extends Controller
 
         if (Auth::guard('cliente')->attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('cliente');
+            return redirect()->route('cliente.index');
         }
 
         return redirect()->back()->withError('Essas credenciais não correspondem a nenhum registro encontrado!');

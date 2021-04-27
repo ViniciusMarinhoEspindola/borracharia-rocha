@@ -43,7 +43,11 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Produtos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
+                        @if(!Auth::guard('cliente')->check())
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
+                        @else
+                            <li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ route('cliente.index') }}">{{ Auth::guard('cliente')->user()->name }}</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>
