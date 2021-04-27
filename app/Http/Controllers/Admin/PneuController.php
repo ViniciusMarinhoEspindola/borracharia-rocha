@@ -59,7 +59,7 @@ class PneuController extends Controller
             'largura' => $request->largura,
             'perfil' => $request->perfil,
             'aro' => $request->aro,
-            'valor' => $request->valor,
+            'valor' => (float) (str_replace(',', '.', str_replace('.', '', $request->valor))),
             'quantidade' => $request->quantidade,
             'descricao' => $request->descricao
         ];
@@ -126,7 +126,7 @@ class PneuController extends Controller
             'largura' => $request->largura,
             'perfil' => $request->perfil,
             'aro' => $request->aro,
-            'valor' => $request->valor,
+            'valor' => (float) (str_replace(',', '.', str_replace('.', '', $request->valor))),
             'quantidade' => $request->quantidade,
             'descricao' => $request->descricao
         ];

@@ -105,7 +105,7 @@
         <div class="row">
             <div class="form-group col-md-6 col-sm-12 my-3">
                 <label for="valor">Valor <span class="text-danger">*</span></label>
-                <input id="valor" class="form-control @error('valor') border-danger @enderror" type="number" step="0.01" min="0" value="{{ $pneu->valor }}" name="valor" required>
+                <input id="valor" class="form-control @error('valor') border-danger @enderror" type="text" value="{{ $pneu->valor }}" name="valor" required>
                 @error('valor')
                     <small class="text-danger">{{ $errors->first('valor') }}</small>
                 @enderror
@@ -130,7 +130,7 @@
             </div>
         </div>
 
-        <button class="btn btn-danger" type="submit">Editar Pneus</button>
+        <button class="btn btn-danger" type="submit">Editar Pneu</button>
     </form>
 </div>
 
@@ -211,12 +211,9 @@
             }
 	    });
     </script>
-    <script>
-        // $('.delete-img').click(function(e) {
-        //     e.preventDefault();
-        //     e.stopPropagation();
 
-        //     $(this).parent().submit();
-        // });
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js" integrity="sha512-RbMQw6xKGymv6bRMO4z5OxHBzzem7BPEQX7nTJC9G08A70gXdUka76Rvgey83MsSXrIEJddog0vxUKN6iTce2Q==" crossorigin="anonymous"></script>
+    <script>
+        VMasker(document.querySelector("#valor")).maskMoney();
     </script>
 @endsection

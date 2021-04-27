@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card borders my-4 p-4">
-    <h2 class="text-danger title text-center"><i class="fas fa-boxes"></i> Pneus</h2>
+    <h2 class="text-danger title text-center"><i class="fas fa-cogs"></i> Serviços</h2>
 </div>
 
 <div class="card my-4 p-4 px-md-5 px-sm-0">
@@ -21,7 +21,7 @@
 <div class="card my-4 p-4">
     <div class="row justify-content-between mb-5">
         <div class="d-flex justify-content-end col">
-            <a class="btn btn-danger" href="{{ route("admin.pneus.create") }}"><i class="fas fa-plus"></i> Cadastrar</a>
+            <a class="btn btn-danger" href="{{ route("admin.servicos.create") }}"><i class="fas fa-plus"></i> Cadastrar</a>
         </div>
     </div>
 
@@ -29,25 +29,23 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th width="20%">Modelo</th>
-                    <th width="20%">Medidas</th>
-                    <th width="10%">Quantidade</th>
-                    <th width="10%">Valor</th>
-                    <th width="20%">Data de Cadastro</th>
+                    <th>Título</th>
+                    <th>Tipo</th>
+                    <th>Tempo Estimado</th>
+                    <th>Descrição</th>
                     <th class="text-center" width="20%">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($pneus as $pneu)
+                @forelse ($servicos as $servico)
                     <tr>
-                        <td>{{ $pneu->modelo }}</td>
-                        <td>{{ $pneu->largura }}/{{ $pneu->perfil }} R {{ $pneu->aro }}</td>
-                        <td>{{ $pneu->quantidade }}</td>
-                        <td>R$ {{ number_format($pneu->valor, 2, ',', '.') }}</td>
-                        <td>{{ $pneu->created_at->format('d/m/Y') }}</td>
+                        <td>{{ $servico->title }}</td>
+                        <td>{{ $servico->type }}</td>
+                        <td>{{ $servico->estimated_time }}</td>
+                        <td>{{ $servico->description }}</td>
                         <td class="d-flex justify-content-center">
-                            <a href="{{ route('admin.pneus.edit', $pneu->id) }}" class="btn btn-outline-danger border-0"><i class="fas fa-edit"></i></a>
-                            <form action="{{ route('admin.pneus.destroy', $pneu->id) }}" method="POST">
+                            <a href="{{ route('admin.servicos.edit', $servico->id) }}" class="btn btn-outline-danger border-0"><i class="fas fa-edit"></i></a>
+                            <form action="{{ route('admin.servicos.destroy', $servico->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
 
@@ -57,13 +55,13 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7" class="text-center">Nenhum pneu encontrado!</td>
+                        <td colspan="7" class="text-center">Nenhum serviço encontrado!</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
 
-        {{ $pneus->appends($filters)->links('admin.includes.paginator') }}
+        {{ $servicos->appends($filters)->links('admin.includes.paginator') }}
     </div>
 </div>
 

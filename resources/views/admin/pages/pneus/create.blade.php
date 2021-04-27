@@ -16,8 +16,8 @@
 
         <div class="row">
             <div class="form-group col my-3">
-                <label for="imagem">Imagens <span class="text-danger">*</span></label>
-                <input id="imagem" class="form-control @error('imagem') border-danger @enderror" type="file" multiple value="{{ old('imagem') }}" name="imagens[]" required>
+                <label for="imagem">Imagens</label>
+                <input id="imagem" class="form-control @error('imagem') border-danger @enderror" type="file" multiple value="{{ old('imagem') }}" name="imagens[]">
                 @error('imagem')
                     <small class="text-danger">{{ $errors->first('imagem') }}</small>
                 @enderror
@@ -63,7 +63,7 @@
         <div class="row">
             <div class="form-group col-md-6 col-sm-12 my-3">
                 <label for="valor">Valor <span class="text-danger">*</span></label>
-                <input id="valor" class="form-control @error('valor') border-danger @enderror" type="number" step="0.01" min="0" value="{{ old('valor') }}" name="valor" required>
+                <input id="valor" class="form-control @error('valor') border-danger @enderror" type="text" value="{{ old('valor') }}" name="valor" required>
                 @error('valor')
                     <small class="text-danger">{{ $errors->first('valor') }}</small>
                 @enderror
@@ -96,4 +96,9 @@
 
 @section('js')
     @include('admin.includes.messages')
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js" integrity="sha512-RbMQw6xKGymv6bRMO4z5OxHBzzem7BPEQX7nTJC9G08A70gXdUka76Rvgey83MsSXrIEJddog0vxUKN6iTce2Q==" crossorigin="anonymous"></script>
+    <script>
+        VMasker(document.querySelector("#valor")).maskMoney();
+    </script>
 @endsection

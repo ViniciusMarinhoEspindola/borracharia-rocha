@@ -44,6 +44,9 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
     // Pneus
     Route::resource('/pneus', PneuController::class);
 
+    // Serviços
+    Route::resource('/servicos', ServicoController::class);
+
     // Clientes
     Route::resource('/clientes', ClienteController::class);
 

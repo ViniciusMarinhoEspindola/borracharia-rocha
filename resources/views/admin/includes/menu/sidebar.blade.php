@@ -12,6 +12,11 @@
             <li @if(Request::segment(2) == 'pneus') class="active" @endif><span class="sidebar-icon"><i class="fas fa-boxes"></i></span> Pneus</li>
         </a>
 
+        {{-- Serviços --}}
+        <a href="{{ route('admin.servicos.index') }}">
+            <li @if(Request::segment(2) == 'servicos') class="active" @endif><span class="sidebar-icon"><i class="fas fa-cogs"></i></span> Serviços</li>
+        </a>
+
         {{-- Clientes --}}
         <a href="{{ route('admin.clientes.index') }}">
             <li @if(Request::segment(2) == 'clientes') class="active" @endif><span class="sidebar-icon"><i class="fas fa-users"></i></span> Clientes</li>
