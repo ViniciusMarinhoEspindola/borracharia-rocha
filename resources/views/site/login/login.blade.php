@@ -15,15 +15,31 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
+
             <h5 class="card-title text-center">Login</h5>
-            <form class="form-signin">
+
+            @if(session()->has('success'))
+              <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+              </div>
+            @endif
+
+            @if(session()->has('error'))
+              <div class="alert alert-danger" role="alert">
+                {{ session('error') }}
+              </div>
+            @endif
+
+            <form class="form-signin" method="POST" action="{{ route('logar') }}">
+              @csrf
+
               <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                <label for="inputEmail">Email</label>
+                <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required autofocus>
+                <label for="inputEmail">E-mail</label>
               </div>
 
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
                 <label for="inputPassword">Senha</label>
               </div>
                 Não é cadastrado? <a href="/cadastro"> Cadastre-se</a>

@@ -63,7 +63,7 @@
         <div class="row">
             <div class="form-group col- my-3">
                 <label for="description">Descrição </label>
-                <textarea id="description" class="form-control @error('description') border-danger @enderror" name="description" required>{!! old('description') !!}</textarea>
+                <textarea id="description" class="form-control @error('description') border-danger @enderror" name="description">{!! old('description') !!}</textarea>
                 @error('description')
                     <small class="text-danger">{{ $errors->first('description') }}</small>
                 @enderror

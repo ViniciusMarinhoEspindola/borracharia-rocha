@@ -12,13 +12,13 @@ class HomeController extends Controller
         return view('site.home.index');
     }
 
-    public function login()
-    {
-        return view('site.login.login');
-    }
+    // public function login()
+    // {
+    //     return view('site.login.login');
+    // }
 
-    public function cadastro()
-    {
-        return view('site.login.signUp');
-    }
+    // public function cadastro()
+    // {
+    //     return view('site.login.signUp');
+    // }
 }

@@ -16,7 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 
 
-Route::get('/login', 'HomeController@login');
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+Route::post('/login', 'Auth\LoginController@logar')->name('logar');
 
 
-Route::get('/cadastro', 'HomeController@cadastro');
+Route::get('/cadastro', 'ClienteController@create')->name('cadastro');
+Route::post('/cadastro', 'ClienteController@store')->name('cadastrar');
+
+Route::group(['middleware' => 'auth:cliente'], function() {
+    Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
+
+    Route::get('/cliente', 'ClienteController@index')->name('cliente.index');
+});
