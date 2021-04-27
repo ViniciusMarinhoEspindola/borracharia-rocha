@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="card borders my-4 p-4">
-    <h2 class="text-danger title text-center"><i class="fas fa-users-cog"></i> Usuários</h2>
+    <h2 class="text-danger title text-center"><i class="fas fa-users"></i> Clientes</h2>
 </div>
 
 <div class="card my-4 p-4 px-md-5 px-sm-0">
@@ -21,7 +21,7 @@
 <div class="card my-4 p-4">
     <div class="row justify-content-between mb-5">
         <div class="d-flex justify-content-end col">
-            <a class="btn btn-danger" href="{{ route("admin.users.create") }}"><i class="fas fa-plus"></i> Cadastrar</a>
+            <a class="btn btn-danger" href="{{ route("admin.clientes.create") }}"><i class="fas fa-plus"></i> Cadastrar</a>
         </div>
     </div>
 
@@ -29,21 +29,23 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th width="30%">Nome</th>
-                    <th width="30%">E-mail</th>
-                    <th width="20%">Data de Cadastro</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
+                    <th>Data de Cadastro</th>
                     <th class="text-center" width="20%">Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($users as $user)
+                @forelse ($clientes as $cliente)
                     <tr>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->email }}</td>
-                        <td>{{ $user->created_at->format('d/m/Y') }}</td>
+                        <td>{{ $cliente->name }}</td>
+                        <td>{{ $cliente->email }}</td>
+                        <td>{{ $cliente->phone }}</td>
+                        <td>{{ $cliente->created_at->format('d/m/Y') }}</td>
                         <td class="d-flex justify-content-center">
-                            <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-outline-danger border-0"><i class="fas fa-user-edit"></i></a>
-                            <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
+                            <a href="{{ route('admin.clientes.edit', $cliente->id) }}" class="btn btn-outline-danger border-0"><i class="fas fa-user-edit"></i></a>
+                            <form action="{{ route('admin.clientes.destroy', $cliente->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
 
@@ -53,13 +55,13 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="7" class="text-center">Nenhum usuário encontrado!</td>
+                        <td colspan="7" class="text-center">Nenhum cliente encontrado!</td>
                     </tr>
                 @endforelse
             </tbody>
         </table>
 
-        {{ $users->appends($filters)->links('admin.includes.paginator') }}
+        {{ $clientes->appends($filters)->links('admin.includes.paginator') }}
     </div>
 </div>
 
