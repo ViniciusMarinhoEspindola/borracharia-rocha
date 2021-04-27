@@ -16,4 +16,9 @@ class HomeController extends Controller
     {
         return view('site.login.login');
     }
+
+    public function cadastro()
+    {
+        return view('site.login.signUp');
+    }
 }
