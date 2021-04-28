@@ -37,23 +37,39 @@
                 @csrf
 
                 <div class="form-label-group">
-                  <input type="text" id="inputName" class="form-control" name="name" placeholder="Nome" required autofocus>
+                  <input type="text" id="inputName" class="form-control @error('name') border-danger @enderror" name="name" value="{{ old('name') }}" placeholder="Nome" required autofocus>
                   <label for="inputName">Nome</label>
+
+                  @error('name')
+                    <small class="text-danger">{{ $errors->first('name') }}</small>
+                  @enderror
                 </div>
 
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" required>
+                  <input type="email" id="inputEmail" class="form-control @error('email') border-danger @enderror" name="email" value="{{ old('email') }}" placeholder="Endereço de e-mail" required>
                   <label for="inputEmail">Email</label>
+
+                  @error('email')
+                    <small class="text-danger">{{ $errors->first('email') }}</small>
+                  @enderror
                 </div>
 
                 <div class="form-label-group">
-                  <input type="number" id="inputPhone" class="form-control" name="phone" placeholder="Phone" required>
+                  <input type="text" id="inputPhone" class="form-control @error('phone') border-danger @enderror" name="phone" value="{{ old('phone') }}" placeholder="Telefone" required>
                   <label for="inputPhone">Telefone</label>
+
+                  @error('phone')
+                    <small class="text-danger">{{ $errors->first('phone') }}</small>
+                  @enderror
                 </div>
 
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+                  <input type="password" id="inputPassword" class="form-control @error('password') border-danger @enderror" name="password" value="{{ old('password') }}" placeholder="Senha" required>
                   <label for="inputPassword">Senha</label>
+
+                  @error('password')
+                    <small class="text-danger">{{ $errors->first('password') }}</small>
+                  @enderror
                 </div>
 
                 <div class="custom-control custom-checkbox mb-3">
@@ -69,3 +85,20 @@
       </div>
     </div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.2.0/vanilla-masker.min.js" integrity="sha512-RbMQw6xKGymv6bRMO4z5OxHBzzem7BPEQX7nTJC9G08A70gXdUka76Rvgey83MsSXrIEJddog0vxUKN6iTce2Q==" crossorigin="anonymous"></script>
+<script>
+    function inputHandler(masks, max, event) {
+        var c = event.target;
+        var v = c.value.replace(/\D/g, '');
+        var m = c.value.length > max ? 1 : 0;
+        VMasker(c).unMask();
+        VMasker(c).maskPattern(masks[m]);
+        c.value = VMasker.toPattern(v, masks[m]);
+    }
+
+    var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
+    var tel = document.querySelector('#inputPhone');
+    VMasker(tel).maskPattern(telMask[0]);
+    tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+</script>
