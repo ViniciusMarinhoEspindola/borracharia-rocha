@@ -50,6 +50,11 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
     // Clientes
     Route::resource('/clientes', ClienteController::class);
 
+    // Agenda
+    Route::group(['prefix' => 'agenda'], function() {
+        Route::get('/disponibilidade', 'DisponibilidadeController@index')->name('disponibilidade.index');
+    });
+
     // Contatos
     Route::get('/contatos', 'ContatoController@index')->name('contatos.index');
 

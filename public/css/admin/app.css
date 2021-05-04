@@ -11,6 +11,7 @@ body {
 
 ::-webkit-scrollbar {
   width: 8px;
+  height: 8px;
   background-color: transparent;
 }
 
@@ -173,6 +174,39 @@ body {
   background-color: #e12d00;
   color: #fff;
 }
+.sidebar ul .dropdown-area .menu-dropdown {
+  height: 0px !important;
+  left: 0px !important;
+  overflow-y: hidden;
+}
+.sidebar ul .dropdown-area .menu-dropdown.active {
+  height: 100% !important;
+}
+.sidebar ul .dropdown-area .menu-dropdown a {
+  text-decoration: none;
+}
+.sidebar ul .dropdown-area .menu-dropdown a li {
+  padding: 20px 20px;
+  color: #2b2a2a;
+  margin: 0px;
+  background-color: #fff;
+  display: inline-block;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word;
+  overflow-x: auto;
+}
+.sidebar ul .dropdown-area .menu-dropdown a li i {
+  margin-right: 10px;
+}
+.sidebar ul .dropdown-area .menu-dropdown a li.active {
+  border-right: 3px solid #e12d00;
+  color: #e12d00;
+}
+.sidebar ul .dropdown-area .menu-dropdown a li:hover {
+  background-color: #e12d00;
+  color: #fff;
+}
 .sidebar.active {
   width: 270px;
 }
@@ -181,6 +215,11 @@ body {
 }
 .sidebar.active ul a li {
   text-align: left !important;
+  display: block;
+}
+.sidebar.active ul .dropdown-area .menu-dropdown a li {
+  text-align: left !important;
+  padding-left: 55px;
   display: block;
 }
 @media only screen and (max-width: 600px) {
