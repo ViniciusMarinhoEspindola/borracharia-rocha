@@ -42,6 +42,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Produtos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#funcionamento">Horários</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contato</a></li>
                         @if(!Auth::guard('cliente')->check())
                             <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Login</a></li>
@@ -52,34 +53,25 @@
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
+        <!-- Masthead-->        <!-- About-->
         <header class="masthead">
+        <section class="page-section" id="about">
             <div class="container h-100">
                 <div class="row h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-10 align-self-end">
-                        <h1 class="text-uppercase text-white font-weight-bold">Borracharia</h1>
+                        <h1 class="text-uppercase text-white font-weight-bold">Precisando de nossos serviços?</h1>
                         <hr class="divider my-4" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 font-weight-light mb-5">desc</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">btn</a>
+                        <p class="text-white-75 font-weight-light mb-5">Cadastre-se para conferir tudo o que oferecemos!</p>
+                        
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/cadastro">Cadastrar</a>
                     </div>
                 </div>
             </div>
+            </section>
         </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">TODO</h2>
-                        <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">TODO</p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">BTN</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- Services-->
         <section class="page-section" id="services">
             <div class="container">
@@ -121,7 +113,7 @@
             <hr class="divider my-4" />
             <br>
             <div class="container text-center">
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Catálogo completo</a>
+            <a class="btn btn-primary btn-xl" href="/admin">Catálogo completo</a>
             <p></p>
             </div>
                 <div class="row no-gutters">
@@ -183,11 +175,61 @@
             </div>
         </div>
         <!-- Call to action-->
-        <section class="page-section bg-dark text-white">
+        <section class="page-section " id="funcionamento">
+
             <div class="container text-center">
-                <h2 class="mb-4">TODO</h2>
-                <a class="btn btn-light btn-xl" href="#">TODO</a>
+                <h2 class="mb-4">Horários de funcionamento</h2>
+                <hr class="divider2 my-4" />
+            <div>
+
+                <div class="d-flex align-items-center">
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Segunda-Feira</h5>
+                        <p class="card-text">Horario de funcionamento</p>
+                        <p class="card-text">De: {} Até:{}</p>
+                    </div>
+                </div>
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Terça-Feira</h5>
+                        <p class="card-text">Horario de funcionamento</p>
+                        <p class="card-text">De: {} Até:{}</p>
+                    </div>
+                </div>
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Quarta-Feira</h5>
+                        <p class="card-text">Horario de funcionamento</p>
+                        <p class="card-text">De: {} Até:{}</p>
+                    </div>
+                </div>
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Quinta-Feira</h5>
+                        <p class="card-text">Horario de funcionamento</p>
+                        <p class="card-text">De: {} Até:{}</p>
+                    </div>
+                </div>
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Sexta-Feira</h5>
+                        <p class="card-text">Horario de funcionamento</p>
+                        <p class="card-text">De: {} Até:{}</p>
+                    </div>
+                </div>
+                <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Sábado</h5>
+                        <p class="card-text">Horario de funcionamento</p>
+                        <p class="card-text">De: {} Até:{}</p>
+                    </div>
+                </div>
+
             </div>
+
+                </div>
+           
         </section>
         <!-- Contact-->
         <section class="page-section" id="contact">
@@ -202,17 +244,12 @@
                 <div class="row">
                     <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
                         <i class="fab fa-whatsapp fa-3x mb-3 text-muted"></i>
-                        <div>(13)999999999</div>
+                        <a class="d-block" href="https://api.whatsapp.com/send?phone=5513981400942" target="_blank">(13)98140-0942</a>
                     </div>
                     <div class="col-lg-4 mr-auto text-center">
                         <i class="fas fa-map-marker-alt fa-3x mb-3 text-muted"></i>
                         <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
                         <a class="d-block" href="https://www.google.com.br/maps/place/Av.+Hermenegildo+Pereira+de+Fran%C3%A7a,+149+-+Balne%C3%A1rio+Esmeralda,+Praia+Grande+-+SP,+11713-290/@-24.0343214,-46.5153389,20.39z/data=!4m5!3m4!1s0x94ce1f7de9b63239:0xc9af64242b97efbb!8m2!3d-24.034334!4d-46.5151349" target="_blank">Av. Hermenegildo Pereira de França, 149   Balneário Esmeralda</a>
-                    </div>
-                    <div class="col-lg-4 mr-auto text-center">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                        <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                        <a class="d-block" href="mailto:contact@yourwebsite.com">contact@borracharia.com.br</a>
                     </div>
                 </div>
             </div>

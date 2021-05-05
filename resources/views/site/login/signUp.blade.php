@@ -3,8 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Cadastro</title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Core theme CSS (includes Bootstrap)-->
     <link rel="stylesheet" href="{{ asset('css/login/styles.css') }}">
 </head>
@@ -71,7 +69,7 @@
                     <small class="text-danger">{{ $errors->first('password') }}</small>
                   @enderror
                 </div>
-
+                Já tem cadastro? <a href="/login"> Faça login</a>
                 <div class="custom-control custom-checkbox mb-3">
 
                 </div>
