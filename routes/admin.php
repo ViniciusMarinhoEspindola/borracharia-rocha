@@ -53,6 +53,8 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
     // Agenda
     Route::group(['prefix' => 'agenda'], function() {
         Route::get('/disponibilidade', 'DisponibilidadeController@index')->name('disponibilidade.index');
+        Route::put('/disponibilidade/{dia_semana}', 'DisponibilidadeController@toggleFuncionamento')->name('disponibilidade.toggle');
+        Route::post('/disponibilidade/{dia_semana}', 'DisponibilidadeController@addHorario')->name('disponibilidade.add.horario');
     });
 
     // Contatos

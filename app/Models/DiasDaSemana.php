@@ -18,7 +18,7 @@ class DiasDaSemana extends Model
         'ic_funcionamento'
     ];
 
-    public function horario_funcionamento()
+    public function horarios_funcionamento()
     {
         return $this->hasMany(HorarioFuncionamento::class, 'dias_semana_id', 'id');
     }
