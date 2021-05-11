@@ -65,7 +65,7 @@
             @if(!Auth::guard('cliente')->check())
             <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">Cadastre-se para conferir tudo o que oferecemos!</p>
-                        
+
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="/cadastro">Cadastrar</a>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
             @else
             <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">Confira nosso catálogo completo!</p>
-                        
+
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="/#">Catálogo</a>
                     </div>
                 </div>
@@ -193,54 +193,24 @@
                 <hr class="divider2 my-4" />
             <div>
 
-                <div class="d-flex align-items-center">
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title">Segunda-Feira</h5>
-                        <p class="card-text">Horario de funcionamento</p>
-                        <p class="card-text">De: {} Até:{}</p>
-                    </div>
-                </div>
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title">Terça-Feira</h5>
-                        <p class="card-text">Horario de funcionamento</p>
-                        <p class="card-text">De: {} Até:{}</p>
-                    </div>
-                </div>
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title">Quarta-Feira</h5>
-                        <p class="card-text">Horario de funcionamento</p>
-                        <p class="card-text">De: {} Até:{}</p>
-                    </div>
-                </div>
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title">Quinta-Feira</h5>
-                        <p class="card-text">Horario de funcionamento</p>
-                        <p class="card-text">De: {} Até:{}</p>
-                    </div>
-                </div>
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title">Sexta-Feira</h5>
-                        <p class="card-text">Horario de funcionamento</p>
-                        <p class="card-text">De: {} Até:{}</p>
-                    </div>
-                </div>
-                <div class="card w-75">
-                    <div class="card-body">
-                        <h5 class="card-title">Sábado</h5>
-                        <p class="card-text">Horario de funcionamento</p>
-                        <p class="card-text">De: {} Até:{}</p>
-                    </div>
-                </div>
+            <div class="d-flex align-items-center">
+                @foreach($dias_semana as $dia_semana)
+                    <div class="card w-75">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $dia_semana->nm_dia_semana }}</h5>
 
+                            <p class="card-text">Horario de funcionamento</p>
+
+                            @forelse($dia_semana->horarios_funcionamento as $horario_funcionamento)
+                                <p class="card-text">De: {{ $horario_funcionamento->hr_inicio->format('H:i') }} Até: {{ $horario_funcionamento->hr_termino->format('H:i') }}</p>
+                            @empty
+                                <p class="card-text">De: 09:00 Até: 18:00</p>
+                            @endforelse
+                        </div>
+                    </div>
+                @endforeach
             </div>
 
-                </div>
-           
         </section>
         <!-- Contact-->
         <section class="page-section" id="contact">

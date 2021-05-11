@@ -18,4 +18,14 @@ class HorarioFuncionamento extends Model
         'hr_termino',
         'dias_semana_id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'hr_inicio' => 'datetime',
+        'hr_termino' => 'datetime',
+    ];
 }
