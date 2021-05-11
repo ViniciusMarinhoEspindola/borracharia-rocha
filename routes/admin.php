@@ -52,9 +52,17 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
 
     // Agenda
     Route::group(['prefix' => 'agenda'], function() {
-        Route::get('/disponibilidade', 'DisponibilidadeController@index')->name('disponibilidade.index');
-        Route::put('/disponibilidade/{dia_semana}', 'DisponibilidadeController@toggleFuncionamento')->name('disponibilidade.toggle');
-        Route::post('/disponibilidade/{dia_semana}', 'DisponibilidadeController@addHorario')->name('disponibilidade.add.horario');
+        Route::group(['prefix' => 'agendamentos', 'as' => 'agendamentos.'], function() {
+            Route::get('/', 'AgendamentoController@index')->name('index');
+            Route::get('/finish/{agendamento}', 'AgendamentoController@finish')->name('finish');
+            Route::get('/destroy/{agendamento}', 'AgendamentoController@destroy')->name('destroy');
+        });
+
+        Route::group(['prefix' => 'disponibilidade', 'as' => 'disponibilidade.'], function() {
+            Route::get('/', 'DisponibilidadeController@index')->name('index');
+            Route::put('/{dia_semana}', 'DisponibilidadeController@toggleFuncionamento')->name('toggle');
+            Route::post('/{dia_semana}', 'DisponibilidadeController@addHorario')->name('add.horario');
+        });
     });
 
     // Contatos

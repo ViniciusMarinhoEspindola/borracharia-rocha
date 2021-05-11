@@ -21,4 +21,25 @@ class Agendamento extends Model
         'cliente_id',
         'servico_id'
     ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'dt_agendamento' => 'date',
+        'hr_agendamento' => 'datetime',
+    ];
+
+    // Relationship
+    public function cliente()
+    {
+        return $this->belongsTo(Cliente::class);
+    }
+
+    public function servico()
+    {
+        return $this->belongsTo(Servico::class);
+    }
 }

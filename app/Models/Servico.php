@@ -23,6 +23,6 @@ class Servico extends Model
 
     public function pneu()
     {
-        return $this->bolongsTo(Pneu::class);
+        return $this->belongsTo(Pneu::class);
     }
 }

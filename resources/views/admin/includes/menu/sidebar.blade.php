@@ -28,7 +28,7 @@
                 </li>
             </a>
             <ul class="menu-dropdown" id="agendamentos-menu">
-                <a href="#">
+                <a href="{{ route('admin.agendamentos.index') }}">
                     <li title="Serviços Agendados">Serviços Agendados</li>
                 </a>
                 <a href="{{ route('admin.disponibilidade.index') }}">
