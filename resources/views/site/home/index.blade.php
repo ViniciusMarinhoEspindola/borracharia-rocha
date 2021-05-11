@@ -62,14 +62,24 @@
                         <h1 class="text-uppercase text-white font-weight-bold">Precisando de nossos serviços?</h1>
                         <hr class="divider my-4" />
                     </div>
-                    <div class="col-lg-8 align-self-baseline">
+            @if(!Auth::guard('cliente')->check())
+            <div class="col-lg-8 align-self-baseline">
                         <p class="text-white-75 font-weight-light mb-5">Cadastre-se para conferir tudo o que oferecemos!</p>
                         
                         <a class="btn btn-primary btn-xl js-scroll-trigger" href="/cadastro">Cadastrar</a>
                     </div>
                 </div>
             </div>
-            </section>
+            @else
+            <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">Confira nosso catálogo completo!</p>
+                        
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="/#">Catálogo</a>
+                    </div>
+                </div>
+            </div>
+            @endif
+        </section>
         </header>
 
         <!-- Services-->
@@ -107,15 +117,16 @@
             </div>
         </section>
         <!-- Portfolio-->
-        <div id="portfolio">
-            <div class="container-fluid p-0">
+
             <h2 class="text-center mt-0">Nossos produtos</h2>
             <hr class="divider my-4" />
             <br>
             <div class="container text-center">
-            <a class="btn btn-primary btn-xl" href="/admin">Catálogo completo</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="/#">Catálogo completo</a>
             <p></p>
             </div>
+            <div id="portfolio">
+            <div class="container-fluid p-0">
                 <div class="row no-gutters">
                     <div class="col-lg-4 col-sm-6">
                         <a class="portfolio-box" href="css\index\portfolio/images.jpg">
