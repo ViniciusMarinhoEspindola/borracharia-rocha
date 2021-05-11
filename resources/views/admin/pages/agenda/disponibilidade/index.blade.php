@@ -34,10 +34,10 @@
                             @forelse($dia_semana->horarios_funcionamento as $horario_funcionamento)
                                 <div class="d-flex align-items-center">
                                     <span>De:</span>
-                                    <input type="time" class="form-control form-control-sm border-0" value="{{ $horario_funcionamento->hr_inicio }}" name="time_de" id="">
+                                    <input type="time" class="form-control form-control-sm border-0" value="{{ $horario_funcionamento->hr_inicio->format('H:i:s') }}" name="time_de" id="">
 
                                     <span>Até:</span>
-                                    <input type="time"  class="form-control form-control-sm border-0" value="{{ $horario_funcionamento->hr_termino }}" name="time_ate" id="">
+                                    <input type="time"  class="form-control form-control-sm border-0" value="{{ $horario_funcionamento->hr_termino->format('H:i:s') }}" name="time_ate" id="">
                                 </div>
                             @empty
                                 <div class="d-flex align-items-center">
