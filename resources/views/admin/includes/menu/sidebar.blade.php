@@ -3,9 +3,9 @@
     <h1 class="title text-center">Borracharia Rocha</h1>
 
     <ul>
-        <a href="">
+        {{-- <a href="">
             <li><span class="sidebar-icon"><i class="fas fa-house-user"></i></span> Home</li>
-        </a>
+        </a> --}}
 
         {{-- Pneus --}}
         <a href="{{ route('admin.pneus.index') }}">

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 // Models
 use App\Models\DiasDaSemana;
+use App\Models\Pneus;
 
 class HomeController extends Controller
 {
@@ -18,6 +19,9 @@ class HomeController extends Controller
                                     ->where('ic_funcionamento', 1)
                                     ->get();
 
-        return view('site.home.index', compact('dias_semana'));
+        $produtos = Pneus::latest()
+                        ->paginate(4);
+
+        return view('site.home.index', compact('dias_semana', 'produtos'));
     }
 }

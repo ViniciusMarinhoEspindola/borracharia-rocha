@@ -23,6 +23,6 @@ class Pneus extends Model
 
     public function imagens()
     {
-        return $this->hasMany(ImagemPneu::class, 'pneu_id', 'id');
+        return $this->hasMany(ImagemPneu::class, 'pneu_id', 'id')->orderBy('ordem');
     }
 }

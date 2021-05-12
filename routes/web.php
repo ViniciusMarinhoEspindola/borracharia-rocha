@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
 
 Route::get('/login', 'Auth\LoginController@login')->name('login');
@@ -22,6 +22,8 @@ Route::post('/login', 'Auth\LoginController@logar')->name('logar');
 
 Route::get('/cadastro', 'ClienteController@create')->name('cadastro');
 Route::post('/cadastro', 'ClienteController@store')->name('cadastrar');
+
+Route::get('/produtos', 'ProdutoController@index')->name('produtos');
 
 Route::group(['middleware' => 'auth:cliente'], function() {
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');

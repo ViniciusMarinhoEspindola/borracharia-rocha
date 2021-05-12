@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/login/styles.css') }}">
 </head>
 <body>
-    <a href="/">
+    <a href="{{ route('home') }}" class="position-absolute" style="top: 0px">
       <img src="css/login/logo.png"  alt="" width='160' weight='160'>
     </a>
 
@@ -69,7 +69,7 @@
                     <small class="text-danger">{{ $errors->first('password') }}</small>
                   @enderror
                 </div>
-                Já tem cadastro? <a href="/login"> Faça login</a>
+                Já tem cadastro? <a href="{{ route('login') }}"> Faça login</a>
                 <div class="custom-control custom-checkbox mb-3">
 
                 </div>
