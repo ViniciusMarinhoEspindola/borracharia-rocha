@@ -5,8 +5,7 @@
 }
 
 body {
-  background: #007bff;
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(144, 148, 206, 0.8) 100%), url("bg-masthead1.jpg");
+  background: linear-gradient(to left, rgba(92, 77, 66, 0.8) 0%, rgba(144, 148, 206, 0.8) 100%), url("bg-masthead1.jpg");
 }
 
 .row{

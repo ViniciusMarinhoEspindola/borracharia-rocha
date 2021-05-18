@@ -10071,9 +10071,7 @@ hr.light {
 #mainNav .navbar-nav .nav-item .nav-link:hover, #mainNav .navbar-nav .nav-item .nav-link:active {
   color: #f73f3f;
 }
-#mainNav .navbar-nav .nav-item .nav-link.active {
-  color: #f73f3f !important;
-}
+
 @media (min-width: 992px) {
   #mainNav {
     box-shadow: none;

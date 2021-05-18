@@ -1,6 +1,9 @@
 @extends('site.layouts.master')
 
 @section('content')
+
+
+
     <!-- Masthead-->
     <header class="masthead">
         <section class="page-section" id="about">
@@ -150,7 +153,7 @@
                 <div class="col-lg-4 mr-auto text-center">
                     <i class="fas fa-map-marker-alt fa-3x mb-3 text-muted"></i>
                     <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                    <a class="d-block" href="https://www.google.com.br/maps/place/Av.+Hermenegildo+Pereira+de+Fran%C3%A7a,+149+-+Balne%C3%A1rio+Esmeralda,+Praia+Grande+-+SP,+11713-290/@-24.0343214,-46.5153389,20.39z/data=!4m5!3m4!1s0x94ce1f7de9b63239:0xc9af64242b97efbb!8m2!3d-24.034334!4d-46.5151349" target="_blank">Av. Hermenegildo Pereira de França, 149   Balneário Esmeralda</a>
+                    <a class="d-block" href="https://www.google.com.br/maps/place/Borracharia+Rocha/@-24.0343751,-46.5147664,18.28z/data=!4m5!3m4!1s0x94ce1fb4a21646cd:0x216ffe7d167e7a24!8m2!3d-24.0343378!4d-46.5151401" target="_blank">Av. Hermenegildo Pereira de França, 149   Balneário Esmeralda</a>
                 </div>
             </div>
         </div>
