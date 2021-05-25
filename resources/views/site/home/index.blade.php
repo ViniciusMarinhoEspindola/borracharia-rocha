@@ -135,29 +135,7 @@
         </div>
     </section>
 
-    <!-- Contact-->
-    <section class="page-section" id="contact">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h2 class="mt-0">Entre em contato!</h2>
-                    <hr class="divider my-4" />
-                    <p class="text-muted mb-5">Abaixo disponibilizamos nossas formas de contato para atende-lo da melhor forma</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
-                    <i class="fab fa-whatsapp fa-3x mb-3 text-muted"></i>
-                    <a class="d-block" href="https://api.whatsapp.com/send?phone=5513981400942" target="_blank">(13)98140-0942</a>
-                </div>
-                <div class="col-lg-4 mr-auto text-center">
-                    <i class="fas fa-map-marker-alt fa-3x mb-3 text-muted"></i>
-                    <!-- Make sure to change the email address in BOTH the anchor text and the link target below!-->
-                    <a class="d-block" href="https://www.google.com.br/maps/place/Borracharia+Rocha/@-24.0343751,-46.5147664,18.28z/data=!4m5!3m4!1s0x94ce1fb4a21646cd:0x216ffe7d167e7a24!8m2!3d-24.0343378!4d-46.5151401" target="_blank">Av. Hermenegildo Pereira de França, 149   Balneário Esmeralda</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('site.includes.contact')
 @endsection
 
 @section('js')

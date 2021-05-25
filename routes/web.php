@@ -25,6 +25,8 @@ Route::post('/cadastro', 'ClienteController@store')->name('cadastrar');
 
 Route::get('/produtos', 'ProdutoController@index')->name('produtos');
 
+Route::post('/contato', 'HomeController@enviaContato')->name('contato');
+
 Route::group(['middleware' => 'auth:cliente'], function() {
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
