@@ -1,1 +1,12 @@
-
+.desc-container {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 18px;
+  /* fallback */
+  max-height: 100px;
+  /* fallback */
+  -webkit-line-clamp: 5;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+}

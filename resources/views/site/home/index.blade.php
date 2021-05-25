@@ -89,7 +89,7 @@
                                     <img class="img-fluid mh-100" src="{{ asset("storage/pneus/{$produto->imagens->first()->img}") }}" alt="..." />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">{{ $produto->modelo }}</div>
-                                        <div class="project-name">{{ $produto->descricao }}</div>
+                                        <div class="project-name desc-container small"><small>{{ $produto->descricao }}</small></div>
                                     </div>
                                 </a>
                             @else

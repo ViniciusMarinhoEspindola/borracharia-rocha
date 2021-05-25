@@ -24,6 +24,7 @@ Route::get('/cadastro', 'ClienteController@create')->name('cadastro');
 Route::post('/cadastro', 'ClienteController@store')->name('cadastrar');
 
 Route::get('/produtos', 'ProdutoController@index')->name('produtos');
+Route::get('/produtos/{produto}', 'ProdutoController@show')->name('produtos.show');
 
 Route::post('/contato', 'HomeController@enviaContato')->name('contato');
 

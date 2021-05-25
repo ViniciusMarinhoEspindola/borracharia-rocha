@@ -1,0 +1,21 @@
+.desc-container {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 18px;     /* fallback */
+    max-height: 100px;      /* fallback */
+    -webkit-line-clamp: 5; /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
+
+.card-produto {
+    &:hover {
+        // background-color: hotpink;
+
+            // -moz-transform: scale(1.1);
+            // -webkit-transform: scale(1.1);
+            // transform: scale(1.1);
+
+    }
+}
