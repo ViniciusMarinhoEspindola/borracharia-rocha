@@ -19,6 +19,27 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        return view('site.produto.index');
+        $produtos = Pneus::latest()
+                        ->when(isset($request->s), function($query) use ($request) {
+                            return $query->where('marca', 'LIKE', "%{$request->s}%");
+                        })
+                        ->paginate(9);
+
+        return view('site.produto.index', \compact('produtos'));
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Models\Pneus  $produto
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Pneus $produto)
+    {
+        $produtos = Pneus::latest()
+                        ->where('id', $produto->id)
+                        ->paginate(6);
+
+        return view('site.produto.show', \compact('produto', 'produtos'));
     }
 }
