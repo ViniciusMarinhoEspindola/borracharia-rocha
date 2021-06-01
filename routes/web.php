@@ -28,8 +28,13 @@ Route::get('/produtos/{produto}', 'ProdutoController@show')->name('produtos.show
 
 Route::post('/contato', 'HomeController@enviaContato')->name('contato');
 
-Route::group(['middleware' => 'auth:cliente'], function() {
+Route::group(['middleware' => 'auth:cliente', 'prefix' => 'cliente'], function() {
     Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
-    Route::get('/cliente', 'ClienteController@index')->name('cliente.index');
+    Route::get('/', 'ClienteController@index')->name('cliente.index');
+    Route::get('/meus-dados', 'ClienteController@edit')->name('cliente.edit');
+    Route::put('/meus-dados/{cliente}', 'ClienteController@update')->name('cliente.update');
+
+    Route::get('/servicos/horarios-disponiveis/{date}', 'ServicosController@horariosDisponiveis')->name('horarios-disponiveis');
+    Route::resource('/servicos', 'ServicosController');
 });

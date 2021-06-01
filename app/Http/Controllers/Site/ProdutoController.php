@@ -40,6 +40,10 @@ class ProdutoController extends Controller
                         ->where('id', $produto->id)
                         ->paginate(6);
 
-        return view('site.produto.show', \compact('produto', 'produtos'));
+        $mensagem = "
+            Olá, eu tenho interesse no produto \"{$produto->modelo}\"
+        ";
+
+        return view('site.produto.show', \compact('produto', 'produtos', 'mensagem'));
     }
 }

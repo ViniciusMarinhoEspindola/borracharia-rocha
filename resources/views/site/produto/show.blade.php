@@ -19,7 +19,9 @@
             </div>
 
             <div class="col-lg-6">
-                <span class="float-right">Restam: {{ $produto->quantidade }}</span>
+                <span class="float-right">
+                    Restam: {{ $produto->quantidade }}
+                </span>
 
                 <h4 class="card-title text-danger">{{ $produto->modelo }}</h4>
                 <h5 class="mt-3">R$ {{ number_format($produto->valor, 2, ',', '.') }}</h5>
@@ -29,6 +31,10 @@
                     <p class="card-text desc-container small text-muted"><strong>Largura:</strong> {{ $produto->largura }}</p>
                     <p class="card-text desc-container small text-muted"><strong>Perfil:</strong> {{ $produto->perfil }}</p>
                 </div>
+
+                <a target="_blank" href="https://api.whatsapp.com/send?phone=5513981400942&text={{ $mensagem }}" class="btn btn-outline-success d-flex align-items-center col-4 rounded mt-4">
+                    <i class="fab fa-whatsapp mr-2" style="font-size: 25px"></i> Tenho Interesse
+                </a>
 
                 <div class="mt-4">
                     <h6>Descrição</h6>
