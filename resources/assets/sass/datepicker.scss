@@ -1,0 +1,242 @@
+.xdsoft_datetimepicker {
+    & {
+        width: 100%;
+        height: auto;
+        padding: 0;
+        border: 0 !important;
+        color: #fff;
+
+        @media(min-width: 768px) {
+            height: 350px;
+        }
+    }
+
+    .xdsoft_label {
+        > .xdsoft_select {
+            font-size: 13px !important;
+            background: #7977b0 !important;
+            border: 0 !important;
+
+            >div>.xdsoft_option {
+                padding: .5rem .75rem !important;
+            }
+
+            .xdsoft_scrollbar {
+                width: 5px !important;
+
+                >.xdsoft_scroller {
+                    background: #fff !important;
+                }
+            }
+        }
+    }
+
+    .xdsoft_prev {
+        height: 15px !important;
+        opacity: 1 !important;
+        background-image: url('../../images/icons/datetime-up.png') !important;
+        background-size: contain;
+        background-position: center;
+    }
+
+    .xdsoft_next {
+        height: 15px !important;
+        opacity: 1 !important;
+        background-image: url('../../images/icons/datetime-down.png') !important;
+        background-size: contain;
+        background-position: center;
+    }
+}
+
+.xdsoft_today_button {
+    opacity: 0 !important;
+    margin-right: 10px !important;
+}
+
+.xdsoft_datepicker {
+    & {
+        width: 100% !important;
+        height: 50%;
+        margin: 0 !important;
+        padding: 4px;
+        background: #7977b0 !important;
+        color: #fff;
+
+        @media(min-width: 768px) {
+            height: 100%;
+            width: calc(80% - 2px)!important;
+            border-right: 2px solid #fff;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+    }
+
+    .xdsoft_label {
+        background: transparent !important;
+        font-size: 17px !important;
+
+        i {
+            opacity: 0 !important;
+        }
+    }
+
+    .xdsoft_month {
+        left: -10px;
+        width: auto !important;
+        text-align: center;
+
+        &:after {
+            content: 'de';
+        }
+    }
+
+    .xdsoft_year {
+        margin-left: -7.5px!important;
+    }
+
+    .xdsoft_calendar {
+        & {
+            height: 80%;
+        }
+
+        table {
+            height: 100%;
+        }
+
+        th {
+            width: auto!important;
+            height: auto!important;
+            padding: 1rem 0 .5rem;
+            background: transparent !important;
+            border: 0 !important;
+            font-size: 17px !important;
+            color: #fff !important;
+            box-shadow: none !important;
+        }
+
+        td {
+            width: auto !important;
+            height: auto!important;
+            background: transparent !important;
+            border: 0 !important;
+            font-size: 15px !important;
+            color: #fff !important;
+            text-align: center !important;
+            box-shadow: none !important;
+
+            &:hover {
+                background: transparent !important;
+                cursor: pointer !important;
+                div {
+                    color: #ecebff !important;
+                    font-weight: 700 !important;
+                }
+            }
+
+            &.xdsoft_current {
+                color: #ecebff !important;
+
+                div {
+                    border: 2px solid #ecebff !important;
+                    border-radius: 5px;
+                }
+            }
+
+            div {
+                width: max-content;
+                margin: 0 auto;
+                padding: .5rem !important;
+
+                @media(min-width: 768px) {
+                    padding: .35rem .75rem !important;
+                }
+            }
+        }
+    }
+
+    .xdsoft_prev {
+        float: right !important;
+        right: 35px !important;
+        background-position: 0 0 !important;
+    }
+
+    .xdsoft_next {
+        right: -15px !important;
+    }
+
+    .xdsoft_prev,
+    .xdsoft_next {
+        margin-top: 7.5px !important;
+    }
+}
+
+.xdsoft_timepicker {
+
+    width: 100% !important;
+    height: 50%;
+    max-height: 300px;
+    margin: 0 !important;
+    padding: 1rem 1rem 2rem 1rem;
+    background: #c9c7ff !important;
+
+    @media(min-width: 768px) {
+        height: 100%;
+        max-height: 100%;
+        width: 20% !important;
+        border-right: 2px solid #7977b0;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+
+
+    &::before {
+        content: 'Hora';
+        display: block;
+        padding-bottom: .875rem;
+        font-size: 17px;
+        font-weight: 700;
+        color: #7977b0;
+    }
+
+    .xdsoft_time_box {
+        border: 0 !important;
+
+        @media(min-width: 768px) {
+            height: 75% !important;
+        }
+    }
+
+    .xdsoft_time_box>div>div {
+        background: transparent !important;
+        border-top: 0 !important;
+        color: #7977b0 !important;
+        font-size: 15px !important;
+
+        &:hover {
+            background: #57567e !important;
+            border-radius: 5px;
+            color: #c9c7ff !important;
+        }
+
+        &.xdsoft_current {
+            background: #57567e !important;
+            box-shadow: none !important;
+            border-radius: 5px;
+            color: #c9c7ff !important;
+        }
+    }
+
+    .xdsoft_prev,
+    .xdsoft_next {
+        width: 15px !important;
+        background-position: 0 0 !important;
+    }
+
+    .xdsoft_prev {
+        margin: 0 auto 0px auto !important;
+    }
+
+    .xdsoft_next {
+        margin: 10px auto 0 auto !important;
+    }
+}

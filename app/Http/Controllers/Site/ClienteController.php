@@ -51,6 +51,45 @@ class ClienteController extends Controller
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Models\Cliente  $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function edit()
+    {
+        $cliente = \Auth::guard('cliente')->user();
+
+        return view('site.cliente.edit', compact('cliente'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \App\Http\Requests\ClienteRequest  $request
+     * @param  \App\Models\Cliente  $cliente
+     * @return \Illuminate\Http\Response
+     */
+    public function update(ClienteRequest $request, Cliente $cliente)
+    {
+        $update = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone' => $request->phone
+        ];
+
+        if(isset($request->password) && !empty($request->password)) {
+            $update['password'] = \Hash::make($request->password);
+        }
+
+        if($cliente->update($update)) {
+            return redirect()->route('cliente.index')->withSuccess('Cliente editado com sucesso!');
+        }
+
+        return back()->withInput()->withError('Ocorreu um erro ao tentar editar os dados do cliente! Tente novamente.');
+    }
+
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
