@@ -28,7 +28,10 @@ class ClienteRequest extends FormRequest
             'name' => ['required', 'max:255'],
             'email' => ['required', 'email', 'max:255',  Rule::unique('clientes')->ignore($this->cliente)],
             'phone' => ['required', 'max:255'],
-            'password' => ['required_without:_method', 'max:255']
+            'password' => ['required_without:_method', 'max:255'],
+            'type' => ['max:255'],
+            'brand' => ['max:255'],
+            'model' => ['max:255']
         ];
     }
 

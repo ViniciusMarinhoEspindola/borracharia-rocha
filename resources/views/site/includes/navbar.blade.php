@@ -7,13 +7,15 @@
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
 
-        <div class="input-group rounded">
-            <input type="search" class="form-control rounded" placeholder="Pesquisar" aria-label="Search"  aria-describedby="search-addon" />
+        <form action="{{ route('produtos') }}" method="GET">
+            <div class="input-group rounded">
+                <input type="search" value="{{ $filtros['s'] ?? '' }}" name="s" class="form-control rounded" placeholder="Pesquisar" aria-label="Search"  aria-describedby="search-addon" />
 
-            <span class="input-group-text text-danger border-0" id="search-addon">
-              <i class="fas fa-search"></i>
-            </span>
-        </div>
+                <button type="submit" class="input-group-text text-danger border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
 
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto my-2 my-lg-0">

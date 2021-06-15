@@ -33,7 +33,7 @@ class ClienteController extends Controller
                                                             ->orWhere('protocolo', 'LIKE', "%{$request->s}%");
                                         });
                                     })
-                                    // ->where('cliente_id', \Auth::guard('cliente')->user()->id)
+                                    ->where('cliente_id', \Auth::guard('cliente')->user()->id)
                                     ->orderByRaw("CASE WHEN ic_status = 0 THEN 1 when ic_status = 2 then 2 when ic_status = 1 then 3 ELSE created_at END DESC")
                                     ->orderBy('dt_agendamento', 'ASC')
                                     ->orderBy('hr_agendamento', 'ASC')
@@ -72,10 +72,14 @@ class ClienteController extends Controller
      */
     public function update(ClienteRequest $request, Cliente $cliente)
     {
+
         $update = [
             'name' => $request->name,
             'email' => $request->email,
-            'phone' => $request->phone
+            'phone' => $request->phone,
+            'type' => $request->type,
+            'brand' => $request->brand,
+            'model' => $request->model
         ];
 
         if(isset($request->password) && !empty($request->password)) {
@@ -111,7 +115,10 @@ class ClienteController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'password' => \Hash::make($request->password)
+            'password' => \Hash::make($request->password),
+            'type' => $request->type,
+            'brand' => $request->brand,
+            'model' => $request->model
         ];
 
         if(Cliente::create($create)) {

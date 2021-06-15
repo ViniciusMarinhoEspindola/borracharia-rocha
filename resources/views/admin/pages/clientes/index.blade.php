@@ -32,6 +32,9 @@
                     <th>Nome</th>
                     <th>E-mail</th>
                     <th>Telefone</th>
+                    <th>Veículo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
                     <th>Data de Cadastro</th>
                     <th class="text-center" width="20%">Ações</th>
                 </tr>
@@ -42,6 +45,9 @@
                         <td>{{ $cliente->name }}</td>
                         <td>{{ $cliente->email }}</td>
                         <td>{{ $cliente->phone }}</td>
+                        <td>{{ $cliente->type }}</td>
+                        <td>{{ $cliente->brand }}</td>
+                        <td>{{ $cliente->model }}</td>
                         <td>{{ $cliente->created_at->format('d/m/Y') }}</td>
                         <td class="d-flex justify-content-center">
                             <a href="{{ route('admin.clientes.edit', $cliente->id) }}" class="btn btn-outline-danger border-0"><i class="fas fa-user-edit"></i></a>

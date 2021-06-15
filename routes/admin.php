@@ -54,6 +54,7 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
     Route::group(['prefix' => 'agenda'], function() {
         Route::group(['prefix' => 'agendamentos', 'as' => 'agendamentos.'], function() {
             Route::get('/', 'AgendamentoController@index')->name('index');
+            Route::get('/comprovante/{agendamento}', 'AgendamentoController@comprovante')->name('comprovante');
             Route::get('/finish/{agendamento}', 'AgendamentoController@finish')->name('finish');
             Route::get('/destroy/{agendamento}', 'AgendamentoController@destroy')->name('destroy');
         });

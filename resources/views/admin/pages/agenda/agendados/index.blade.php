@@ -50,6 +50,10 @@
                                 <a href="{{ route('admin.agendamentos.finish', $agendamento->id) }}" class="btn btn-outline-danger border-0" title="Finalizar"><i class="fas fa-check"></i></a>
                                 <a href="{{ route('admin.agendamentos.destroy', $agendamento->id) }}" class="btn btn-outline-danger border-0" title="Cancelar"><i class="fas fa-times"></i></a>
                             </td>
+                        @elseif($agendamento->ic_status == 2)
+                            <td class="d-flex justify-content-center">
+                                <a href="{{ route('admin.agendamentos.comprovante', $agendamento->id) }}" target="_blank" class="btn btn-outline-secondary border-0" title="Comprovante"><i class="fas fa-file-invoice"></i></a>
+                            </td>
                         @else
                             <td></td>
                         @endif

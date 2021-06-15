@@ -56,7 +56,10 @@ class ClienteController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'phone' => $request->phone,
-            'password' => \Hash::make($request->password)
+            'password' => \Hash::make($request->password),
+            'type' => $request->type,
+            'brand' => $request->brand,
+            'model' => $request->model
         ];
 
         if(Cliente::create($create)) {
@@ -100,7 +103,10 @@ class ClienteController extends Controller
         $update = [
             'name' => $request->name,
             'email' => $request->email,
-            'phone' => $request->phone
+            'phone' => $request->phone,
+            'type' => $request->type,
+            'brand' => $request->brand,
+            'model' => $request->model
         ];
 
         if(isset($request->password) && !empty($request->password)) {

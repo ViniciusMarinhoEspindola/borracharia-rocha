@@ -21,11 +21,14 @@ class ProdutoController extends Controller
     {
         $produtos = Pneus::latest()
                         ->when(isset($request->s), function($query) use ($request) {
-                            return $query->where('marca', 'LIKE', "%{$request->s}%");
+                            return $query->where('modelo', 'LIKE', "%{$request->s}%");
                         })
+                        ->where('quantidade', '>', 0)
                         ->paginate(9);
 
-        return view('site.produto.index', \compact('produtos'));
+        $filtros = $request->all();
+
+        return view('site.produto.index', \compact('produtos', 'filtros'));
     }
 
     /**

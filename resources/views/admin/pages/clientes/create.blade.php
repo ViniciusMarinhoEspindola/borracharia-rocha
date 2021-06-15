@@ -50,6 +50,38 @@
             </div>
         </div>
 
+        <h3>Veículo</h3>
+
+        <div class="row mb-3">
+            <div class="form-group col-md-4 col-sm-12 my-3">
+                <label for="type">Tipo </label>
+                <select id="type" class="form-select @error('type') border-danger @enderror" name="type" value="{{ old('type') }}">
+                    <option value="">Selecione ...</option>
+                    <option value="Carro">Carro</option>
+                    <option value="Moto">Moto</option>
+                </select>
+                @error('type')
+                    <small class="text-danger">{{ $errors->first('type') }}</small>
+                @enderror
+            </div>
+
+            <div class="form-group col-md-4 col-sm-12 my-3">
+                <label for="brand">Marca </label>
+                <input id="brand" class="form-control @error('brand') border-danger @enderror" type="text" name="brand">
+                @error('brand')
+                    <small class="text-danger">{{ $errors->first('brand') }}</small>
+                @enderror
+            </div>
+
+            <div class="form-group col-md-4 col-sm-12 my-3">
+                <label for="model">Modelo </label>
+                <input id="model" class="form-control @error('model') border-danger @enderror" type="text" name="model">
+                @error('model')
+                    <small class="text-danger">{{ $errors->first('model') }}</small>
+                @enderror
+            </div>
+        </div>
+
         <button class="btn btn-danger" type="submit">Adicionar Cliente</button>
     </form>
 </div>

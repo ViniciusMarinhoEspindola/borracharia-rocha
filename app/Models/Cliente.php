@@ -19,7 +19,10 @@ class Cliente extends Authenticatable
         'name',
         'email',
         'phone',
-        'password'
+        'password',
+        'type',
+        'brand',
+        'model',
     ];
 
     /**

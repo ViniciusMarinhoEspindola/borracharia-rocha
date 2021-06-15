@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 // Models
 use App\Models\Agendamento;
 
+use PDF;
+
 class AgendamentoController extends Controller
 {
      /**
@@ -73,5 +75,16 @@ class AgendamentoController extends Controller
        }
 
        return back()->withError('Erro ao cancelar o agendamento!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\Agendamento  $agendamento
+     * @return \Illuminate\Http\Response
+     */
+    public function comprovante(Agendamento $agendamento)
+    {
+       return PDF::loadView('export.invoice', compact('agendamento'))->stream('comprovante.pdf');
     }
 }

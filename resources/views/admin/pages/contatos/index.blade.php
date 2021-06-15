@@ -58,10 +58,12 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.15.7/dist/sweetalert2.all.min.js"></script>
     <script>
-        document.querySelector(".msg-desc").onclick = function(e) {
-            Swal.fire({
-                html: `<div class="align-left">${this.getAttribute('data-desc')}</div>`,
-            });
-        };
+        document.querySelectorAll(".msg-desc").forEach(function(btn) {
+            btn.onclick = function(e) {
+                Swal.fire({
+                    html: `<div class="align-left">${this.getAttribute('data-desc')}</div>`,
+                });
+            };
+        });
     </script>
 @endsection
