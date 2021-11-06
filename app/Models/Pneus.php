@@ -25,4 +25,9 @@ class Pneus extends Model
     {
         return $this->hasMany(ImagemPneu::class, 'pneu_id', 'id')->orderBy('ordem');
     }
+
+    public function anuncios()
+    {
+        return $this->hasMany(Anuncio::class, 'pneu_id', 'id')->orderBy('ordem');
+    }
 }

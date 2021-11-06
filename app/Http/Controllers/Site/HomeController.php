@@ -10,6 +10,7 @@ use App\Http\Requests\ContatoRequest;
 
 // Models
 use App\Models\DiasDaSemana;
+use App\Models\Anuncio;
 use App\Models\Pneus;
 use App\Models\Contato;
 
@@ -21,8 +22,7 @@ class HomeController extends Controller
                                     ->where('ic_funcionamento', 1)
                                     ->get();
 
-        $produtos = Pneus::latest()
-                        ->paginate(4);
+        $produtos = Anuncio::orderBy('ordem')->get();
 
         return view('site.home.index', compact('dias_semana', 'produtos'));
     }

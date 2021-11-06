@@ -28,8 +28,17 @@ class PneuController extends Controller
                             ->orWhere('quantidade', 'LIKE', "%{$request->s}%")
                             ->orWhere('descricao', 'LIKE', "%{$request->s}%");
                     })
-                    ->latest()
-                    ->paginate(10);
+                    ->when(isset($request->exceptAnuncios), function($query) use ($request) {
+                        $query->doesntHave('anuncios');
+                    });
+
+        if($request->ajax()) {
+            $pneus = $pneus->orderBy('modelo')->get();
+
+            return response()->json($pneus);
+        }
+
+        $pneus = $pneus->latest()->paginate(10);
 
         $filters = $request->all();
 

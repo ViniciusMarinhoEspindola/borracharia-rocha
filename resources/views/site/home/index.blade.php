@@ -84,20 +84,20 @@
                 <div class="row no-gutters justify-content-center align-items-center" style="overflow-x: auto; overflow-y: hidden;">
                     @foreach($produtos as $produto)
                         <div class="col-lg-4 col-sm-6" style="max-height: 250px; min-height:100px; min-width:100px;">
-                            @if($produto->imagens->first())
-                                <a class="portfolio-box" href="{{ asset("storage/pneus/{$produto->imagens->first()->img}") }}">
-                                    <img class="img-fluid mh-100" src="{{ asset("storage/pneus/{$produto->imagens->first()->img}") }}" alt="..." />
+                            @if($produto->pneu->imagens->first())
+                                <a class="portfolio-box" href="{{ asset("storage/pneus/{$produto->pneu->imagens->first()->img}") }}">
+                                    <img class="img-fluid mh-100" src="{{ asset("storage/pneus/{$produto->pneu->imagens->first()->img}") }}" alt="..." />
                                     <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">{{ $produto->modelo }}</div>
-                                        <div class="project-name desc-container small"><small>{{ $produto->descricao }}</small></div>
+                                        <div class="project-category text-white-50">{{ $produto->pneu->modelo }}</div>
+                                        <div class="project-name desc-container small"><small>{{ $produto->pneu->descricao }}</small></div>
                                     </div>
                                 </a>
                             @else
                                 <a class="portfolio-box" href="css\index\portfolio/images.jpg">
                                     <img class="img-fluid mh-100" src="css\index\portfolio/images.jpg" alt="..." />
                                     <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">{{ $produto->modelo }}</div>
-                                        <div class="project-name">{{ $produto->descricao }}</div>
+                                        <div class="project-category text-white-50">{{ $produto->pneu->modelo }}</div>
+                                        <div class="project-name">{{ $produto->pneu->descricao }}</div>
                                     </div>
                                 </a>
                             @endif

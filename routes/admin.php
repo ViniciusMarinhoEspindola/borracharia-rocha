@@ -44,6 +44,11 @@ Route::group(['as' => 'admin.', 'middleware' => 'auth'], function() {
     // Pneus
     Route::resource('/pneus', PneuController::class);
 
+    // Pneus
+    Route::delete('/anuncios', 'AnuncioController@destroy')->name('anuncios.destroy');
+    Route::put('/anuncios', 'AnuncioController@update')->name('anuncios.update');
+    Route::resource('/anuncios', AnuncioController::class)->except('destroy', 'update');
+
     // Serviços
     Route::resource('/servicos', ServicoController::class);
 

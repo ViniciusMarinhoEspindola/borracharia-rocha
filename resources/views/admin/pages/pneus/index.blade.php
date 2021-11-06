@@ -21,6 +21,7 @@
 <div class="card my-4 p-4">
     <div class="row justify-content-between mb-5">
         <div class="d-flex justify-content-end col">
+            <a class="btn btn-outline-danger mx-4" href="{{ route("admin.anuncios.index") }}">Anúncios</a>
             <a class="btn btn-danger" href="{{ route("admin.pneus.create") }}"><i class="fas fa-plus"></i> Cadastrar</a>
         </div>
     </div>

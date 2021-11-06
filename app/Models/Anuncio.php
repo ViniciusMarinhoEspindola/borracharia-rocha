@@ -5,20 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Servico extends Model
+class Anuncio extends Model
 {
     use HasFactory;
 
-    protected $table = 'servicos';
+    protected $table = 'anuncios';
 
     protected $primaryKey = 'id';
 
     protected $fillable = [
-        'title',
-        'type',
-        'estimated_time',
-        'description',
-        'pneu_id'
+        'pneu_id',
+        'ordem',
     ];
 
     public function pneu()

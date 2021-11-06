@@ -27,9 +27,8 @@
                 <label for="type">Tipo <span class="text-danger">*</span></label>
                 <select id="type" class="form-select @error('type') border-danger @enderror" name="type" required>
                     <option value="" selected disabled>Selecione uma opção</option>
-                    <option {{ old('type') == "1" ? "selected" : "" }} value="1">Tipo 1</option>
-                    <option {{ old('type') == "2" ? "selected" : "" }} value="2">Tipo 2</option>
-                    <option {{ old('type') == "3" ? "selected" : "" }} value="3">Tipo 3</option>
+                    <option {{ old('type') == "Manutenção" ? "selected" : "" }} value="Manutenção">Manutenção</option>
+                    <option {{ old('type') == "Troca" ? "selected" : "" }} value="Troca">Troca</option>
                 </select>
                 @error('type')
                     <small class="text-danger">{{ $errors->first('type') }}</small>
